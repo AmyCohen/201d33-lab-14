@@ -1,12 +1,19 @@
 'use strict';
 
 var submitElement = document.getElementById('catalog');
+var nameList = [];
 
-var addOption = document.createElement('option');
-document.getElementById('items').appendChild(addOption);
 
 function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
+  var addOption = document.createElement('option');
+  document.getElementById('items').appendChild(addOption);
+
+  var getItemNames = localStorage.getItem('itemNamesArray');
+  nameList = JSON.parse(getItemNames);
+  console.log(nameList);
+
+  document.getElementsByTagName('option')[0].setAttribute('id', 'namesList');
 }
 
 function handleSubmit(event) {
