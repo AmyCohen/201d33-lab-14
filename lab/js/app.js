@@ -2,6 +2,7 @@
 
 // TODO: Create a "Cart" constructor that holds quantity, item, an an array of items in the cart
 var itemsArray = [];
+
 var Cart = function (qty, item) {
   this.quantity = qty;
   this.item = item;
@@ -14,7 +15,10 @@ var Product = function(filePath, name) {
   this.filePath = filePath;
   this.name = name;
   Product.allProducts.push(this);
+  Product.nameList.push(this.name);
 };
+Product.nameList = [];
+
 Product.allProducts = [];
 console.log();
 
@@ -23,7 +27,17 @@ function generateCatalog() {
   var items = localStorage.getItem('listOfProducts');
   var productList = JSON.parse(items);
 
-  if (productList && Product.allProducts.length) {
+  var getItemNames = localStorage.getItem('itemNamesArray');
+  // var nameList = null;
+  // if (getItemNames !== undefined) {
+  //   console.log(getItemNames);
+  var nameList = JSON.parse(getItemNames);
+  // }
+
+  if (nameList && nameList.length) {
+    Product.nameList = nameList;
+  }
+  if (productList && productList.length) {
     Product.allProducts = productList;
 
     return;
@@ -50,8 +64,12 @@ function generateCatalog() {
   new Product('assets/water-can.jpg', 'Water Can');
   new Product('assets/wine-glass.jpg', 'Wine Glass');
 
+
   var saveItems = JSON.stringify(Product.allProducts);
   localStorage.setItem('listOfProducts', saveItems);
+
+  var saveItemNames = JSON.stringify(Product.nameList);
+  localStorage.setItem('itemNamesArray', saveItemNames);
 }
 
 new Product('assets/bag.jpg', 'Bag');
@@ -79,4 +97,5 @@ new Product('assets/wine-glass.jpg', 'Wine Glass');
 
 // Initialize the app
 generateCatalog();
-console.log(generateCatalog);
+
+// console.log(generateCatalog);

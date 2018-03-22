@@ -1,5 +1,10 @@
 'use strict';
 
+var submitElement = document.getElementById('catalog');
+
+var addOption = document.createElement('option');
+document.getElementById('items').appendChild(addOption);
+
 function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
 }
@@ -35,7 +40,7 @@ function updateCartPreview() {
 }
 
 // TODO: Put an event listener on the #catalog so that you can run the "handleSubmit" method when user submits the form (adding an item to their cart)
-
+submitElement.addEventListener('submit', handleSubmit);
 
 // Start it up ...
 populateForm();
