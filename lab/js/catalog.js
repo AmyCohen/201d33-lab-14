@@ -7,20 +7,20 @@ var nameList = [];
 
 function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
-  var addOption = document.createElement('option');
-  document.getElementById('items').appendChild(addOption);
+  var itemInput = document.getElementById('items');
 
   var getItemNames = localStorage.getItem('itemNamesArray');
   nameList = JSON.parse(getItemNames);
   console.log(nameList);
 
-  document.getElementsByTagName('option')[0].setAttribute('id', 'namesList');
-
   for (var i = 0; i < nameList.length; i++) {
+    var addOption = document.createElement('option');
 
+    addOption.textContent = nameList[i];
+
+    itemInput.appendChild(addOption);
     addOption.innerHTML = nameList[i];
     addOption.value = nameList[i];
-
   }
 }
 
