@@ -1,7 +1,13 @@
 'use strict';
 
 // TODO: Create a "Cart" constructor that holds quantity, item, an an array of items in the cart
-
+var itemsArray = [];
+var Cart = function (qty, item) {
+  this.quantity = qty;
+  this.item = item;
+  itemsArray.push(this.item);
+};
+console.log(Cart);
 
 // Product Contructor
 var Product = function(filePath, name) {
@@ -10,6 +16,7 @@ var Product = function(filePath, name) {
   Product.allProducts.push(this);
 };
 Product.allProducts = [];
+console.log();
 
 function generateCatalog() {
   new Product('assets/bag.jpg', 'Bag');
@@ -36,3 +43,4 @@ function generateCatalog() {
 
 // Initialize the app
 generateCatalog();
+console.log(generateCatalog);
