@@ -1,5 +1,6 @@
 'use strict';
 
+var select = document.getElementById('items');
 var submitElement = document.getElementById('catalog');
 var nameList = [];
 
@@ -14,6 +15,13 @@ function populateForm() {
   console.log(nameList);
 
   document.getElementsByTagName('option')[0].setAttribute('id', 'namesList');
+
+  for (var i = 0; i < nameList.length; i++) {
+
+    addOption.innerHTML = nameList[i];
+    addOption.value = nameList[i];
+
+  }
 }
 
 function handleSubmit(event) {
