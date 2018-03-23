@@ -72,6 +72,8 @@ function generateCatalog() {
   var imgInput = document.getElementsByClassName('deck col-1');
 
   for (var i = 0; i < nameList.length; i++) {
+
+    //create an image tag and populate it now
     var addImgs = document.createElement('img');
 
     // addImgs.setAttribute('src', '');
