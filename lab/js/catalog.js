@@ -11,7 +11,7 @@ function populateForm() {
 
   var getItemNames = localStorage.getItem('itemNamesArray');
   nameList = JSON.parse(getItemNames);
-  console.log(nameList);
+  // console.log(nameList);
 
   for (var i = 0; i < nameList.length; i++) {
     var addOption = document.createElement('option');

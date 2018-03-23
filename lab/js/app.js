@@ -11,7 +11,7 @@ var Cart = function (qty, item) {
 console.log(Cart);
 
 // Product Contructor
-var Product = function(filePath, name) {
+var Product = function (filePath, name) {
   this.filePath = filePath;
   this.name = name;
   Product.allProducts.push(this);
@@ -28,9 +28,7 @@ function generateCatalog() {
   var productList = JSON.parse(items);
 
   var getItemNames = localStorage.getItem('itemNamesArray');
-  // var nameList = null;
-  // if (getItemNames !== undefined) {
-  //   console.log(getItemNames);
+
   var nameList = JSON.parse(getItemNames);
   // }
 
@@ -70,6 +68,20 @@ function generateCatalog() {
 
   var saveItemNames = JSON.stringify(Product.nameList);
   localStorage.setItem('itemNamesArray', saveItemNames);
+
+  var imgInput = document.getElementsByClassName('deck col-1');
+
+  for (var i = 0; i < nameList.length; i++) {
+    var addImgs = document.createElement('img');
+
+    // addImgs.setAttribute('src', '');
+    // addImgs.setAttribute('alt', '');
+
+    document.getElementsByClassName('deck col-1').appendChild('addImgs');
+    // imgInput.appendChild(addImgs);
+    // addImgs.innerHTML = itemsArray[i];
+    // addImgs.value = itemsArray[i];
+  }
 }
 
 new Product('assets/bag.jpg', 'Bag');
@@ -92,7 +104,6 @@ new Product('assets/unicorn.jpg', 'Unicorn');
 new Product('assets/usb.gif', 'USB');
 new Product('assets/water-can.jpg', 'Water Can');
 new Product('assets/wine-glass.jpg', 'Wine Glass');
-
 
 
 // Initialize the app
