@@ -4,6 +4,7 @@ var Cart = [];
 
 function loadCart() {
   // TODO: Pull the cart (if it exists) from Local Storage and make available to this app
+
 }
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart

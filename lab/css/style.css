@@ -1,0 +1,15 @@
+* {
+  background-color: salmon;
+  color: #800080;
+}
+
+h1 {
+  font-size: 2em;
+  padding: 1em;
+}
+
+#catalog {
+  padding: 1em;
+  color: blue;
+  border-bottom: 5px powderblue;
+}
